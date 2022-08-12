@@ -18,11 +18,7 @@ I want to be able to
     -Link to GitHub, LinkedIn. 
 
 ## Wireframe: 
-Link: https://wireframe.cc/bGlaNm
-
-
-
-
+![JS_Webframe](https://user-images.githubusercontent.com/107147187/184403472-8aa51e1d-9bcc-4924-a9f5-7e885460fba6.png)
 
 ## Technologies, Libraries, APIs
 CDC WONDER API
