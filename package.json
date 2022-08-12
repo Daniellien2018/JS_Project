@@ -1,0 +1,40 @@
+{
+  "name": "js_project",
+  "version": "1.0.0",
+  "description": "Summary of Project:\r     -Graphical representation of diabetes per state\r     -Grouped by age \r     -Interactive human body with diabetetic side effects\r     -Pathophysiology of Diabetes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniellien2018/JS_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daniellien2018/JS_Project/issues"
+  },
+  "homepage": "https://github.com/Daniellien2018/JS_Project#readme",
+  "dependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "core-js": "^3.24.1",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.54.4",
+    "sass-loader": "^13.0.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+    "browserslist": [
+      "defaults"
+    ]
+  
+  
+}
