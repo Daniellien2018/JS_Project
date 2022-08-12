@@ -1,13 +1,11 @@
 # JS_Project
-
-## Summary of Project:
     -Graphical representation of diabetes per state
     -Grouped by age 
     -Interactive human body with diabetetic side effects
     -Pathophysiology of Diabetes
 
 ## Background: 
-The Goal of my Project is to display the Mortality Rate and Number of Deaths caused by Diabetes Melitus over the past ten years. I plan to use a map and hover functionalities to highlight each selected state. I also want click functionality in order to select a state, and have a graph of the numbers of deaths per state grouped by statistics. Statistical grouping consists of state, age, gender, etc..
+    The Goal of my Project is to display the Mortality Rate and Number of Deaths caused by Diabetes Melitus over the past ten years. I plan to use a map and hover functionalities to highlight each selected state. I also want click functionality in order to select a state, and have a graph of the numbers of deaths per state grouped by statistics. Statistical grouping consists of state, age, gender, etc..
 
 ## Functionality and MVPs:
 I want to be able to 
