@@ -18,3 +18,14 @@ I want to be able to
     -Fun facts regarding diabetes (type 1, type 2), links to medical articles, links to health tips.
     -Link to GitHub, LinkedIn. 
 
+CDC WONDER API
+https://wonder.cdc.gov/wonder/help/WONDER-API.html
+D3 Data visualization
+
+
+IMPLEMENTATION TIMELINE
+Friday Afternoon and Weekend: Understand API and determine which API to use. Study how to implement the API
+Monday: Implement Data into the website
+Tuesday: Create the website, work on functionality 
+Wednesday: CSS and Design of website
+Thursday Morning: Final touches 
