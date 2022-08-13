@@ -26,7 +26,7 @@
 ## Technologies, Libraries, APIs
 CDC WONDER API
 https://wonder.cdc.gov/wonder/help/WONDER-API.html
-D3 Data visualization
+D3 Data visualization (D3 topoJSON)
 
 
 ## Implementation Timeline:
