@@ -3,7 +3,7 @@ import { async } from 'regenerator-runtime';
 import {map} from './map';
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    map();
+    map(2020);
 });
 
 
