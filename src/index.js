@@ -2,16 +2,6 @@ import { path } from 'd3';
 import { async } from 'regenerator-runtime';
 import {map} from './map';
 
-// function UsStateChoropleth(data, {
-//     features = states,
-//     borders = statemesh,
-//     width = 975,
-//     height = 610,
-//     ...options
-//   } = {}) {
-//     return Choropleth(data, {features, borders, width, height, ...options});
-//   }
-
 document.addEventListener("DOMContentLoaded", (event) => {
     map();
 });
