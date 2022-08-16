@@ -2,7 +2,28 @@ import data from "./data.json"
 console.log(data)
 
 
-// avgCrudeRate
+function renderSlider() {
+    const slider = document.createElement("div");
+    slider.setAttribute("id", "slider-container");
+
+    const sliderInput = document.createElement("input");
+    sliderInput.setAttribute("id", "year-slider");
+    sliderInput.setAttribute("type", "range");
+    sliderInput.setAttribute("min", "1999");
+    sliderInput.setAttribute("max", "2020");
+    // sliderInput.setAttribute("value", "2020");
+    sliderInput.setAttribute("step", "1");
+
+    const sliderLabel = document.createElement("span");
+    sliderLabel.setAttribute("id", "slider-current-year");
+    //   sliderLabel.innerHTML = 2020;
+    
+    slider.appendChild(sliderInput);
+    slider.appendChild(sliderLabel);
+    document.getElementsByClassName("us-map-container")[0].appendChild(slider);
+
+    document.getElementById("slider-current-year").style.left = `calc( 100% - 12.5px - ${document.getElementById("slider-current-year").offsetWidth / 2}px)`;
+}
 
 export const map = function(year){
     // let year = 2012
@@ -37,16 +58,6 @@ export const map = function(year){
             }
         })
         ;
-// THE GOAL
-// I want to be able to get a singular "crudeRate" for each State, pass each rate into
-// A callback and fill each state with a corresponding color (Chloropathy)
-
-// THE PROBLEM
-// My dataset is not unique, ex: multiple alabama's
-// need to add the crudeRates of each state (Sum)
-
-//The Solution
-// data is an Array, Use arr.uniq? 
 
     svg.append("path")
         .attr("class", "state-borders")
@@ -56,10 +67,20 @@ export const map = function(year){
 
     const states = document.querySelector("svg")
 
-    states.addEventListener("click", (e) => {
-        // console.log(e.target.dataset.id)
-        // let stateID = +e.target.dataset.id
+    // states.addEventListener("mouseover", e => {
+    //     const name = e.target.__data__.properties.NAME;
+    //     const fullMessage = name.concat(": 33",);
+    //     const domEle = document.getElementById("hover-tooltip");
+    //     domEle.innerHTML = fullMessage;
+    //     domEle.style.opacity = 1;
+    // });
 
+    // states.addEventListener("mouseleave", e => {
+    //     document.getElementById("hover-tooltip").innerHTML = "";
+    //     document.getElementById("hover-tooltip").style.opacity = 0;
+    // })
+
+    states.addEventListener("click", (e) => {
         // all data points that match the state
         let resArr = data.filter(ele => ele["State Code"] === +e.target.dataset.id)
         let state = resArr[0]["State"]
@@ -81,21 +102,15 @@ export const map = function(year){
                 crudeRate += obj["Crude Rate"]
             }
         })
+        console.log(deaths)
+        console.log(population)
+        console.log(crudeRate / resArr.length)
         // all data points that match the year
         let resArr2 = resArr.filter(ele => ele["Year"] === year)
-        
         console.log(state)
-        // console.log(deaths)
-        // console.log(population)
-        // console.log(crudeRate / resArr.length)
         console.log(resArr2)
         console.log(resArr2[0]["Crude Rate"])
         
-
-        
-
-        // console.log(resArr)
-        // console.log(e.target.dataset.id)
     })
     
 }

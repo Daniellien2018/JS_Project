@@ -10,7 +10,11 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>
 
-
+    <style>
+      body {
+        background-image: url('the-phope-9X1rJClbnmg-unsplash.jpg');
+      }
+      </style>
 
     <title>Diabetes Mellitus Crude Mortality Rate</title>
 
@@ -20,19 +24,41 @@
     <div class="topnav">
       <div id="headerleft"> 
         <a class="active">My Links</a>
-      </div>
-      <div id="headerright"> 
         <a href="https://github.com/Daniellien2018"><img src="github-logo.png" alt="github"></a>
         <a href="https://www.linkedin.com/in/daniel-lien-7a7b6262/"><img src="linkedin-logo.png" alt="linkedin"></a>
         <a href="#about">About Me</a>
-        
+      </div>
+      <div id="headerright"> 
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
       </div> 
     </div>
 
     <h1>Diabetes Mellitus Crude Mortality Rate</h1>
+  </div>
+    <div class="main-container">
+      <div class="us-map-container">
+        <h2 id="us-map-header">State Mortality Rate</h2>
+      </div>
+      <svg width="960" height="600"></svg>
+      <div class="right-section-container">
+        <div class="charts-container">
+        <div class="detail-chart-container"></div>
+      </div>
+    </div>
 
-    <svg width="960" height="600"></svg>
+    <div class="slideContainer">
+      <input type="range" min="1999" max="2020" value="2020" class="slider" id="myRange">
+      <p><span id='value'></span></p>
+    </div>
 
+    
   </body>
 
 </html>

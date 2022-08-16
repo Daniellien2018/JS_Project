@@ -1,9 +1,18 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+body {
+  font-family: "Volkhov", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  position: relative;
+}
+
 .topnav {
   background-color: #333;
   overflow: hidden;
+  justify-content: flex-start;
 }
 
 .topnav a {
@@ -13,6 +22,7 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 28px;
+  justify-content: flex-start;
 }
 
 img {
@@ -34,10 +44,61 @@ img {
   color: white;
 }
 
+#headerright {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#us-map-header {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  font-family: "Volkhov", serif;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
 h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 5px 0;
 }
 
 path:hover {
@@ -52,4 +113,84 @@ path:hover {
   stroke-linejoin: round;
   stroke-linecap: round;
   pointer-events: none;
+}
+
+.us-map-container {
+  /* flex: 0 0 50%; */
+  width: 55%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: flex-end;
+}
+
+#us-map-header {
+  margin: 10px 0;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+p {
+  margin-top: 20px;
+  opacity: 0.7;
+}
+
+.slideContainer {
+  width: 80%;
+  margin-top: 50px;
+  display: flex;
+}
+
+.slider::after {
+  content: "2020";
+  color: black;
+  font-size: 2rem;
+  position: relative;
+  left: 30%;
+  top: 26px;
+}
+
+.slider::before {
+  content: "1999";
+  color: black;
+  font-size: 2rem;
+  position: relative;
+  left: 12%;
+  top: 26px;
+}
+
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 80%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  border-radius: 12px;
+  box-shadow: 0px 1px 10px 1px black;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
 }
