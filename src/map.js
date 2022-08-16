@@ -22,14 +22,19 @@ export const map = function(year){
         .attr("data-id", el => el.id)
         .attr("data-year", year)
         .attr("fill", (obj) => {
-            let rate = data.find(ele => +obj.id === ele["State Code"])["Crude Rate"]
-            return rate
-        //     let resArr = []
-        //     data.forEach( (ele) => {
-                
-        //     })
-        //     return "red"
-            
+            const rate = data.find(ele => +obj.id === ele["State Code"] && ele["Year"] === year)["Crude Rate"]
+            if (rate === "unreliable"){
+                return "black"
+            }
+            if (rate <= 5.9){
+                return "powderblue" 
+            }else if (rate > 5.9 && rate <= 7.5){
+                return "lightskyblue"
+            }else if (rate > 7.5 && rate <= 10){
+                return "deepskyblue"
+            }else{
+                return "navy"
+            }
         })
         ;
 // THE GOAL
@@ -55,6 +60,7 @@ export const map = function(year){
         // console.log(e.target.dataset.id)
         // let stateID = +e.target.dataset.id
 
+        // all data points that match the state
         let resArr = data.filter(ele => ele["State Code"] === +e.target.dataset.id)
         let state = resArr[0]["State"]
 
@@ -75,11 +81,16 @@ export const map = function(year){
                 crudeRate += obj["Crude Rate"]
             }
         })
-
+        // all data points that match the year
+        let resArr2 = resArr.filter(ele => ele["Year"] === year)
+        
         console.log(state)
-        console.log(deaths)
-        console.log(population)
-        console.log(crudeRate / resArr.length )
+        // console.log(deaths)
+        // console.log(population)
+        // console.log(crudeRate / resArr.length)
+        console.log(resArr2)
+        console.log(resArr2[0]["Crude Rate"])
+        
 
         
 
