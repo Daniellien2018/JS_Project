@@ -112,6 +112,14 @@ export const map = function(year){
         console.log(resArr2[0]["Crude Rate"])
         
     })
-    
+
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("value");
+
+    output.innerHTML = slider.value
+
+    slider.oninput = function(){
+        output.innerHTML = this.value
+    }
 }
 
