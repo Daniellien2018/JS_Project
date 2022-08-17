@@ -30,11 +30,12 @@ export const map = function(year){
     var svg = d3.select("svg");
 
     var path = d3.geoPath();
-    // console.log(topojson.feature(us, us.objects.states).features)
 
     var map = d3.json("https://d3js.org/us-10m.v1.json", function(error, us) {
         if (error) throw error;
-        console.log(topojson.feature(us, us.objects.states).features)
+        var topo = topojson.feature(us, us.objects.states).features
+        // console.log(topojson.feature(us, us.objects.states).features)
+        // console.log(topo)
         
         svg.attr("class", "states")
         .selectAll("path")
@@ -44,7 +45,6 @@ export const map = function(year){
         .attr("data-id", el => el.id)
         .attr("data-year", year)
         .attr("fill", (obj) => {
-            // console.log(obj)
             const rate = data.find(ele => +obj.id === ele["State Code"] && ele["Year"] === year)["Crude Rate"]
             if (rate === "unreliable"){
                 return "black"
@@ -62,89 +62,92 @@ export const map = function(year){
         svg.append("path")
         .attr("class", "state-borders")
         .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
-    });
 
-    const states = document.querySelector("svg")
+        const states = document.querySelector("svg")
 
-    //tooltip
-    var tooltip = d3.select("#tooltip")
-    .append("div")
-    .style("position", "absolute")
-    .style("visibility", "hidden")
-    // .text("I'm a circle!")
-    // .text("path")
-    // .html(data)
-    .html( (obj) => {
-        // console.log(obj)
-        // console.log(data)
-        let resArr = data.filter(ele => ele["State Code"] === 6)
-        // console.log(resArr)?
-        // let resArr = data.filter(ele => ele["State Code"] === obj.id)
-        // console.log(data)
-        // console.log(obj)
-        // let res = data.find(ele => +obj.id === ele["State Code"])
-        // console.log(res)
-        // return res
-    })
-    // use .html, make text say what i want
-    .style("top", "-100px")
-    .style("left", "100px")
-    .style("border", "1px solid black")
-    .style("background", "white")
-    .style("border-radius", "10px");
-
-    d3.select("svg")
-    .on("mouseover", (stateData) =>{
-        tooltip.style("visibility", "visible")
-        .style("top", event.pageY)
-        .style("left", event.pageX)
-    })
-    .on("mouseout", (stateData) => {
-        tooltip.style("visibility", "hidden")
-    })
-
-    //click
-    states.addEventListener("click", (e) => {
-        // all data points that match the state
-        let resArr = data.filter(ele => ele["State Code"] === +e.target.dataset.id)
-        // console.log(e.target.dataset)
-        
-        let population = 0;
-        resArr.forEach (obj => {
+        //tooltip
+        var tooltip = d3.select("#tooltip")
+        .append("div")
+        .style("position", "absolute")
+        .style("visibility", "hidden")
+        .text("I'm a circle!")
+        // .html(`<p>Hello I am Daniel </p>`)
+        // .text("path")
+        // .html(data)
+        // .html( (obj) => {
+            // console.log(topo)
+            // console.log(topo[0].id)
             // console.log(obj)
-            population += obj["Population"]
+            // console.log(data)
+            // let resArr = data.filter(ele => ele["State Code"] === +topo[0].id)
+            // console.log(resArr)
+            // let resArr = data.filter(ele => ele["State Code"] === obj.id)
+            // console.log(data)
+            // console.log(obj)
+            // let res = data.find(ele => +obj.id === ele["State Code"])
+            // console.log(res)
+            // return res
+        // })
+        // use .html, make text say what i want
+        .style("top", "-100px")
+        .style("left", "100px")
+        .style("border", "1px solid black")
+        .style("background", "white")
+        .style("border-radius", "10px");
+
+        d3.select("svg")
+        .on("mouseover", (stateData) =>{
+            tooltip.style("visibility", "visible")
+            .style("top", event.pageY)
+            .style("left", event.pageX)
+        })
+        .on("mouseout", (stateData) => {
+            tooltip.style("visibility", "hidden")
         })
 
-        let deaths = 0;
-        resArr.forEach (obj => {
-            deaths += obj["Deaths"]
-        })
-                
-        let crudeRate = 0;
-        resArr.forEach (obj => {
-            let ele = obj["Crude Rate"]
-            if (ele !== "Unreliable"){
-                crudeRate += obj["Crude Rate"]
-            }
-        })
+        //click
+        // states.addEventListener("click", (e) => {
+        //     // all data points that match the state
+        //     let resArr = data.filter(ele => ele["State Code"] === +e.target.dataset.id)
+        //     // console.log(e.target.dataset)
+            
+        //     let population = 0;
+        //     resArr.forEach (obj => {
+        //         // console.log(obj)
+        //         population += obj["Population"]
+        //     })
 
-        let state = resArr[0]["State"]
+        //     let deaths = 0;
+        //     resArr.forEach (obj => {
+        //         deaths += obj["Deaths"]
+        //     })
+                    
+        //     let crudeRate = 0;
+        //     resArr.forEach (obj => {
+        //         let ele = obj["Crude Rate"]
+        //         if (ele !== "Unreliable"){
+        //             crudeRate += obj["Crude Rate"]
+        //         }
+        //     })
 
-        // console.log(deaths)
-        // console.log(population)
-        // console.log(crudeRate / resArr.length)
-        // all data points that match the year
-        let resArr2 = resArr.filter(ele => ele["Year"] === year)
-        // console.log(state)
-        // console.log(resArr2)
-        // console.log(resArr2[0]["Crude Rate"])            
-    })
+        //     let state = resArr[0]["State"]
 
-    //slider
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("value");
-    output.innerHTML = slider.value
-    slider.oninput = function(){
-        output.innerHTML = this.value
-    }
+        //     console.log(deaths)
+        //     console.log(population)
+        //     console.log(crudeRate / resArr.length)
+        //     // all data points that match the year
+        //     let resArr2 = resArr.filter(ele => ele["Year"] === year)
+        //     console.log(state)
+        //     console.log(resArr2)
+        //     console.log(resArr2[0]["Crude Rate"])            
+        // })
+
+        //slider
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("value");
+        output.innerHTML = slider.value
+        slider.oninput = function(){
+            output.innerHTML = this.value
+        }
+    });   
 }
