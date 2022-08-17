@@ -60,6 +60,28 @@ h1 {
   margin: 5px 0;
 }
 
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+h2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#us-map-header {
+  font-size: 25px;
+  font-family: "Volkhov", serif;
+}
+
+#diabetes-info {
+  font-size: 25px;
+  font-family: "Volkhov", serif;
+}
+
 path:hover {
   fill: gold;
   cursor: pointer;
@@ -74,20 +96,53 @@ path:hover {
   pointer-events: none;
 }
 
-.us-map-container {
-  /* flex: 0 0 50%; */
-  width: 55%;
-  position: relative;
+.tabs {
+  border: 1px solid #cccccc;
   display: flex;
-  flex-direction: column;
-  align-items: right;
-  justify-content: flex-end;
 }
 
-#us-map-header {
-  margin: 10px 0;
-  font-size: 25px;
-  font-weight: 400;
+.tabs__sidebar {
+  width: 125px;
+  flex-shrink: 0;
+  background: #cccccc;
+}
+
+.tabs__button {
+  display: block;
+  padding: 10px;
+  background: #eeeeee;
+  border: none;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.tabs__button:active {
+  background: #dddddd;
+}
+
+.tabs__button:not(:last-of-type) {
+  border-bottom: 1px solid #cccccc;
+}
+
+.tabs__button--active {
+  font-weight: bold;
+  border-right: 2px solid #009879;
+  background: #dddddd;
+}
+
+.tabs__content {
+  padding: 15px;
+  font-size: 15 px;
+  display: none;
+}
+
+.tabs__content--active {
+  display: block;
+}
+
+.tabs__content > :first-child {
+  margin-top: 0;
 }
 
 p {
@@ -154,4 +209,8 @@ p {
   height: 25px; /* Slider handle height */
   background: #04AA6D; /* Green background */
   cursor: pointer; /* Cursor on hover */
+}
+
+#tooltip {
+  z-index: 1;
 }
