@@ -3,14 +3,13 @@ import { async } from 'regenerator-runtime';
 import {map} from './map';
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    map(2020); //2005,2010,2013,2014,2015,2016,2019
+    map(2020); 
 });
+
 // const slider = document.querySelector(".slideContainer")
 let slider = document.getElementsByClassName("slideContainer")
 // console.log(slider)
-
 // slider.addEventListener("click", (event) => {
-  // console.log(event)
 document.addEventListener("click", (event) => {
   let year = document.getElementById("myRange");
   // console.log(year)

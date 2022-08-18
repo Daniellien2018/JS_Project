@@ -1,17 +1,4 @@
 import data from "./data.json"
-// console.log(data)
-
-// export function legend(){
-//     var svg = d3.select('.map');
-//     svg.append("circle").attr("cx", 550).attr("cy", 550).attr("r", 10).style("fill", "#F5EBEB")
-//     svg.append("circle").attr("cx", 550).attr("cy", 550).attr("r", 10).style("fill", "#3AB1C8")
-//     svg.append("circle").attr("cx", 550).attr("cy", 550).attr("r", 10).style("fill", "#2772DB")
-//     svg.append("circle").attr("cx", 550).attr("cy", 550).attr("r", 10).style("fill", "#3AB1C8")
-//     svg.append("text").attr("x", 570).attr("y", 553).text("z").style("font-size", "15px").attr("alignment-baseline", "middle")
-//     svg.append("text").attr("x", 570).attr("y", 583).text("z").style("font-size", "15px").attr("alignment-baseline", "middle")
-//     svg.append("text").attr("x", 570).attr("y", 583).text("z").style("font-size", "15px").attr("alignment-baseline", "middle")
-//     svg.append("text").attr("x", 570).attr("y", 583).text("z").style("font-size", "15px").attr("alignment-baseline", "middle")
-// }
 
 export const map = function(year){
     var svg = d3.select("svg");
@@ -87,42 +74,6 @@ export const map = function(year){
         .on("mouseout", (stateData) => {
             tooltip.style("visibility", "hidden")
         })
-        
-        // const states = document.querySelector("svg")
-
-        
-        // states.addEventListener("click", (e) => {
-        //     // all data points that match the state
-        //     let resArr = data.filter(ele => ele["State Code"] === +e.target.dataset.id)
-            
-        //     let population = 0;
-        //     resArr.forEach (obj => {
-        //         population += obj["Population"]
-        //     })
-
-        //     let deaths = 0;
-        //     resArr.forEach (obj => {
-        //         deaths += obj["Deaths"]
-        //     })
-                    
-        //     let crudeRate = 0;
-        //     resArr.forEach (obj => {
-        //         let ele = obj["Crude Rate"]
-        //         if (ele !== "Unreliable"){
-        //             crudeRate += obj["Crude Rate"]
-        //         }
-        //     })
-
-        //     // let state = resArr[0]["State"]
-
-        //     console.log(deaths)
-        //     console.log(population)
-        //     console.log(crudeRate / resArr.length)
-        //     // all data points that match the year
-        //     let resArr2 = resArr.filter(ele => ele["Year"] === year)
-        //     console.log(state)
-        //     console.log(resArr2[0]["Crude Rate"])            
-        // })
 
         //slider
         var slider = document.getElementById("myRange");
