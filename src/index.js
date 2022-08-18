@@ -6,14 +6,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     map(2020); 
 });
 
-// const slider = document.querySelector(".slideContainer")
-let slider = document.getElementsByClassName("slideContainer")
-// console.log(slider)
-// slider.addEventListener("click", (event) => {
+
 document.addEventListener("click", (event) => {
-  let year = document.getElementById("myRange");
-  // console.log(year)
+  if (event.target.id === "myRange"){
+    let year = document.getElementById("myRange");
   map(+year.value); //2005,2010,2013,2014,2015,2016,2019
+  }
 });
 
 //Side tabs
