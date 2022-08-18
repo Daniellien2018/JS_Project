@@ -29,7 +29,6 @@ img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 2px;
-  width: 150px;
   width: 25px;
   height: 25px;
 }
@@ -103,6 +102,7 @@ path:hover {
 
 .tabs__sidebar {
   width: 125px;
+  height: 550px;
   flex-shrink: 0;
   background: #cccccc;
 }
@@ -139,6 +139,8 @@ path:hover {
 
 .tabs__content--active {
   display: block;
+  width: 400px;
+  height: 550px;
 }
 
 .tabs__content > :first-child {
@@ -153,9 +155,10 @@ p {
 }
 
 .slideContainer {
-  width: 60%;
+  width: 100%;
   margin-top: 50px;
   display: flex;
+  justify-content: center;
 }
 
 .slider::after {
@@ -179,7 +182,7 @@ p {
 .slider {
   -webkit-appearance: none; /* Override default CSS styles */
   appearance: none;
-  width: 80%; /* Full-width */
+  width: 100%; /* Full-width */
   height: 25px; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
@@ -213,4 +216,32 @@ p {
 
 #tooltip {
   z-index: 1;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2px;
+  width: 600;
+  height: 150px;
+}
+
+#butterfly {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+  width: 125px;
+}
+
+#ribbon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+  width: 125px;
 }

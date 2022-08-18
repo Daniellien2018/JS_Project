@@ -41,7 +41,8 @@ export const map = function(year){
             .style("left", "100px")
             .style("border", "1px solid black")
             .style("background", "white")
-            .style("border-radius", "10px");
+            .style("border-radius", "10px")
+            ;
         
         svg.attr("class", "states")
         .selectAll("path")
@@ -68,6 +69,8 @@ export const map = function(year){
             tooltip.style("visibility", "visible")
             .style("top", event.pageY)
             .style("left", event.pageX)
+            .style("text-align", "center")
+            .style("height", "70px")
             .html(() => {
                 console.log(stateData.id)
                 let resArr = data.filter(ele => ele["State Code"] === +stateData.id)
@@ -75,7 +78,7 @@ export const map = function(year){
                 let rate = resArr2[0]["Crude Rate"]
                 let state = resArr2[0]["State"]
                 console.log()
-                return`<p>${state}: ${rate}</p>`   
+                return`<p>${state}: ${rate} Deaths per 1000<br> caused by Diabetes</p>`   
             })
         svg.append("path")
         .attr("class", "state-borders")

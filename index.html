@@ -17,7 +17,7 @@
 
     <style>
       body {
-        background-image: url('the-phope-9X1rJClbnmg-unsplash.jpg');
+        background-image: url('./images/the-phope-9X1rJClbnmg-unsplash.jpg');
       }
       </style>
 
@@ -29,8 +29,8 @@
     <div class="topnav">
       <div id="headerleft"> 
         <a class="active">My Links</a>
-        <a href="https://github.com/Daniellien2018"><img src="github-logo.png" alt="github"></a>
-        <a href="https://www.linkedin.com/in/daniel-lien-7a7b6262/"><img src="linkedin-logo.png" alt="linkedin"></a>
+        <a href="https://github.com/Daniellien2018"><img src="./images/github-logo.png" alt="github"></a>
+        <a href="https://www.linkedin.com/in/daniel-lien-7a7b6262/"><img src="./images/linkedin-logo.png" alt="linkedin"></a>
         <a href="https://www.appacademy.io/">About Me</a>
       </div>
     </div>
@@ -43,6 +43,11 @@
         <div class="map">
             <svg width="960" height="600"></svg>
         </div>
+        <div class="slideContainer">
+          <input type="range" min="1999" max="2020" value="2020" class="slider" id="myRange">
+          <p>Year: <span id='value'></span></p>
+        </div>
+        <div id="tooltip"> </div>
       </div>
       <div id="right">
         <h2 id="diabetes-info">What is Diabetes Mellitus?</h2> 
@@ -54,9 +59,10 @@
           </div>
           <div class="tabs__content tabs__content--active" data-tab="1">
             <h2>Type 1 v.s Type 2 Diabetes</h2>
-            <p>Diabetes Mellitus is a disease in which the body improperly interacts with blood sugar, also known as glucose.<br> Inability to properly digest sugar results in many symptoms, stemming from excess sugar in the body. 
-              <br>Type 1 is considered to be hereditary, while Type 2 is commonly acquired throughout adolescence and adulthood. 
-              <br>While both Type 1 and Type 2 are considered chronic diseases, many steps can be taken to reduce the symptoms of diabetes, specifically Type 2. </p>
+            <p>-Diabetes Mellitus is a disease in which the body improperly interacts with blood sugar.
+              <br>-Inability to properly digest sugar results in many symptoms, stemming from excess sugar in the body. 
+              <br>-Type 1 is considered to be hereditary, while Type 2 is commonly acquired throughout adolescence and adulthood. 
+              <br>-While both Type 1 and Type 2 are considered chronic diseases, many steps can be taken to reduce symptoms. </p>
           </div> 
           <div class="tabs__content" data-tab="2">
             <h2>Statistics</h2>
@@ -66,21 +72,18 @@
           </div> 
           <div class="tabs__content" data-tab="3">
             <h2>Prevention and Awareness</h2>
-            <p>-Treatment for Type 1 Diabetes mainly includes regular insulin injections, as insulin must be supplemented since uptake of insulin is completely halted.
+            <p>-Treatment for Type 1 Diabetes mainly includes regular insulin injections.
               <br> -In extreme cases, Type 2 Diabetes is also treated with insulin supplementation, however the main mitigative practices include a healthy diet and an active lifestyle. 
               <br> -November is American Diabetes Month. 
               <br> - A blue ribbon is used to represent Diabetes Awareness and advocation for education on the Diabetes Epidemic. </p>
           </div> 
         </div>
+        <div class="images">
+          <a href="https://www.cdc.gov/diabetes/index.html" id="ribbon"><img src="./images/diabetes-ribbon-2.jpeg" alt="ribbon"></a>
+          <a href="" id="butterfly"><img src="./images/diabetes-butterfly-2.jpeg" alt="ribbon"></a>
+        </div>
       </div>
     </div>  
-
-    <div class="slideContainer">
-      <input type="range" min="1999" max="2020" value="2020" class="slider" id="myRange">
-      <p>Year: <span id='value'></span></p>
-    </div>
-    <div id="tooltip"> </div>
-      
 
   </body>
 
