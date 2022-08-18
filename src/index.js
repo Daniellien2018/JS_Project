@@ -4,13 +4,18 @@ import {map} from './map';
 
 document.addEventListener("DOMContentLoaded", (event) => {
     map(2020); 
+    let instructions = document.getElementById('instructions_modal')
+    instructions.addEventListener("click", (event)=>{
+    instructions.style.opacity = '0';
+    instructions.style.pointerEvents = 'none'
+  })
 });
 
 
 document.addEventListener("click", (event) => {
   if (event.target.id === "myRange"){
     let year = document.getElementById("myRange");
-  map(+year.value); //2005,2010,2013,2014,2015,2016,2019
+    map(+year.value); //2005,2010,2013,2014,2015,2016,2019
   }
 });
 
@@ -44,3 +49,4 @@ function setupTabs() {
       tabsContainer.querySelector(".tabs__sidebar .tabs__button").click();
     });
   });
+

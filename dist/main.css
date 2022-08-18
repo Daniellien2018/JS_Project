@@ -33,6 +33,10 @@ img {
   height: 25px;
 }
 
+img:hover {
+  scale: 1.8;
+}
+
 .topnav a:hover {
   background-color: #ddd;
   color: black;
@@ -244,4 +248,38 @@ p {
   align-items: center;
   height: 150px;
   width: 250px;
+}
+
+#instructions_modal {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 150vh;
+  width: 100vw;
+  transition: 700ms;
+}
+
+.instructions {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructions div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  padding: 10px;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  width: 100vh;
+  height: 15vh;
+  border-radius: 20px;
 }
