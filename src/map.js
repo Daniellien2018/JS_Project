@@ -33,7 +33,6 @@ export const map = function(year){
     var map = d3.json("https://d3js.org/us-10m.v1.json", function(error, us) {
         if (error) throw error;
         var topo = topojson.feature(us, us.objects.states).features
-        // console.log(topo)
         var tooltip = d3.select("#tooltip")
             .append("div")
             .style("position", "absolute")
@@ -42,7 +41,7 @@ export const map = function(year){
             .style("left", "100px")
             .style("border", "1px solid black")
             .style("background", "white")
-            .style("border-radius", "10px")
+            .style("border-radius", "10px");
         
         svg.attr("class", "states")
         .selectAll("path")
@@ -52,7 +51,6 @@ export const map = function(year){
         .attr("data-id", el => el.id)
         .attr("data-year", year)
         .attr("fill", (obj) => {
-            // console.log(obj)
             const rate = data.find(ele => +obj.id === ele["State Code"] && ele["Year"] === year)["Crude Rate"]
             if (rate === "unreliable"){
                 return "black"
@@ -77,88 +75,21 @@ export const map = function(year){
                 let rate = resArr2[0]["Crude Rate"]
                 let state = resArr2[0]["State"]
                 console.log()
-                return`<p>${state}: ${rate}</p>`;   
+                return`<p>${state}: ${rate}</p>`   
             })
         svg.append("path")
         .attr("class", "state-borders")
         .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
 
+        d3.select("svg")
+            .selectAll("path")
+            .enter()
+        })
+        .on("mouseout", (stateData) => {
+            tooltip.style("visibility", "hidden")
+        })
+        
         // const states = document.querySelector("svg")
-
-        //tooltip
-        // console.log(topo)
-        // console.log(data)
-        // let resArr = data.filter(ele => ele["State Code"] === +topo[0].id)
-        // console.log(resArr)
-
-        // .text("I'm a circle!")
-        // .html(`<p>${data[0]["State"]}: ${data[0]["Crude Rate"]} </p>`)
-        // .html((obj)=>{
-            //     console.log(obj)
-            // })
-            // .text("path")
-            // .html(data)
-            // .html( (obj) => {
-                // console.log(topo)
-                // console.log(topo[0].id)
-                // console.log(obj)
-                // console.log(data)
-                // let resArr = data.filter(ele => ele["State Code"] === +topo[0].id)
-                // console.log(resArr)
-                // let resArr = data.filter(ele => ele["State Code"] === obj.id)
-                // console.log(data)
-                // console.log(obj)
-                // let res = data.find(ele => +obj.id === ele["State Code"])
-                // console.log(res)
-                // return res
-                // })
-                // use .html, make text say what i want
-                
-                d3.select("svg").selectAll("path")
-                    .enter()
-                    })
-        // .on("mouseout", (stateData) => {
-        //     tooltip.style("visibility", "hidden")
-        // })
-        // states.addEventListener("mouseover", (e) => {
-        //         // all data points that match the state
-        //         // console.log(e.target.dataset)
-        //         let resArr = data.filter(ele => ele["State Code"] === +e.target.dataset.id)
-        //         let crudeRate = 0;
-        //         resArr.forEach(obj =>{
-        //             let ele = obj["Crude Rate"]
-        //             if (ele !== "Unreliable"){
-        //                 crudeRate += obj["Crude Rate"]
-        //             }
-        //         })
-        //         let resArr2 = resArr.filter(ele => ele["Year"] === year)
-        //         let trueRate = resArr2[0]["Crude Rate"]
-                
-        //         // console.log(trueRate)
-
-        //         var tooltip = d3.select("#tooltip")
-        //         .append("div")
-        //         .style("position", "absolute")
-        //         .style("visibility", "hidden")
-        //         .style("top", "-100px")
-        //         .style("left", "100px")
-        //         .style("border", "1px solid black")
-        //         .style("background", "white")
-        //         .style("border-radius", "10px");
-
-        //         d3.select("svg")
-        //             .on("mouseover", (stateData) =>{
-        //                 tooltip.style("visibility", "visible")
-        //                 .style("top", event.pageY)
-        //                 .style("left", event.pageX)
-        //                 .html(`<p>Hello I am Daniel </p>`)
-        //             })
-        //             .on("mouseout", (stateData) => {
-        //                 tooltip.style("visibility", "hidden")
-        //             })
-        // })
-
-
 
         // click
         // states.addEventListener("click", (e) => {
