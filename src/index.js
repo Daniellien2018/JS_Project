@@ -3,7 +3,18 @@ import { async } from 'regenerator-runtime';
 import {map} from './map';
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    map(2020);
+    map(2020); //2005,2010,2013,2014,2015,2016,2019
+});
+// const slider = document.querySelector(".slideContainer")
+let slider = document.getElementsByClassName("slideContainer")
+// console.log(slider)
+
+// slider.addEventListener("click", (event) => {
+  // console.log(event)
+document.addEventListener("click", (event) => {
+  let year = document.getElementById("myRange");
+  // console.log(year)
+  map(+year.value); //2005,2010,2013,2014,2015,2016,2019
 });
 
 //Side tabs
@@ -25,10 +36,6 @@ function setupTabs() {
         button.classList.add("tabs__button--active");
         tabToActivate.classList.add("tabs__content--active");
 
-        // console.log(sideBar);
-        // console.log(tabsContainer);
-        // console.log(tabsNumber);
-        // console.log(tabToActivate);
       });
     });
 

@@ -234,14 +234,14 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 125px;
-  width: 125px;
+  height: 150px;
+  width: 250px;
 }
 
 #ribbon {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 125px;
-  width: 125px;
+  height: 150px;
+  width: 250px;
 }
