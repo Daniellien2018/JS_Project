@@ -1,5 +1,8 @@
 # Crude Mortality Rate by State caused by Diabetes Mellitus Data Visualization
 
+## Live Link:
+    https://daniellien2018.github.io/JS_Project/
+
 ## Background: 
     The Goal of my project is to display the Mortality Rate and Number of Deaths caused by Diabetes Melitus over the past ten years. 
     The interactive map of the United States has hover functionality that allows users to visualize data per state.
