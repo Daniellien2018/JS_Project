@@ -16,8 +16,8 @@
     -Embedded hyperlinks to educational websites.
     -Link to GitHub, LinkedIn. 
 
-## Wireframe: 
-![JS_Webframe](https://user-images.githubusercontent.com/107147187/184403472-8aa51e1d-9bcc-4924-a9f5-7e885460fba6.png)
+<!-- ## Wireframe: 
+![JS_Webframe](https://user-images.githubusercontent.com/107147187/184403472-8aa51e1d-9bcc-4924-a9f5-7e885460fba6.png) -->
 
 ## Technologies, Libraries, APIs
     Key technologies used include creating a D3 Map using both geoJson and topoJson, as well as utilizing the CDC's (Center for Disease Control) API WONDER.
@@ -26,5 +26,5 @@
 ## Key Features
     One of the most challenging aspects of this project was connecting the WONDER API to the topoJson library, and having the website result in a map. The first issue was that the API would return XML formatted data, which presented a challenge when parsing. Not only was the data improperly formatted, the data was returned with irregularities and many edge cases were required to avoid code breaks. The solution for this problem was to download the data as a standard text file, which was then converted to a CSV file via Microsoft Excel. After some selective parsing and data organization, the date was then converted to a json file which was helpful and readily usable in my project. 
     Another challenging aspect of my project was illustrating a dynamic map that would change according to the value given by a user via a scroll bar. I needed to create a dynamic scroll bar that could listen to and handle user events, such as the click event. Originally the map was created using a map() function that would fetch data and render a map based off of a specific year condition. However, I came back to refactor the code so that the map function took in a year as a parameter, and the map(year) function was re-rendered with the appropriate year everytime a user clicked on the scroll bar specifically. This allowed for the dynamic portrayal of an interactive map that could account for user interaction.  
-    
+
 
