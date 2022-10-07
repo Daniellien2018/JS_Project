@@ -86,7 +86,7 @@ h2 {
 }
 
 path:hover {
-  fill: gold;
+  fill: red;
   cursor: pointer;
 }
 

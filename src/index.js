@@ -2,14 +2,18 @@ import { path } from 'd3';
 import { async } from 'regenerator-runtime';
 import {map} from './map';
 
+//map upon load
 document.addEventListener("DOMContentLoaded", (event) => {
     map(2020); 
-    let instructions = document.getElementById('instructions_modal')
+});
+//Modal upon load
+document.addEventListener("DOMContentLoaded", (event) => {
+  let instructions = document.getElementById('instructions_modal')
     instructions.addEventListener("click", (event)=>{
     instructions.style.opacity = '0';
     instructions.style.pointerEvents = 'none'
-  })
-});
+    })
+})
 
 
 document.addEventListener("click", (event) => {
@@ -19,6 +23,13 @@ document.addEventListener("click", (event) => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () =>{
+  setupTabs();
+
+  document.querySelectorAll(".tabs").forEach(tabsContainer => {
+    tabsContainer.querySelector(".tabs__sidebar .tabs__button").click();
+  });
+});
 //Side tabs
 function setupTabs() {
     document.querySelectorAll(".tabs__button").forEach(button => {
@@ -42,11 +53,4 @@ function setupTabs() {
     });
 
   }
-  document.addEventListener("DOMContentLoaded", () =>{
-    setupTabs();
-
-    document.querySelectorAll(".tabs").forEach(tabsContainer => {
-      tabsContainer.querySelector(".tabs__sidebar .tabs__button").click();
-    });
-  });
 
