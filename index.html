@@ -30,9 +30,9 @@
     <div class="topnav">
       <div id="headerleft"> 
         <a class="active">My Links</a>
-        <a href="https://github.com/Daniellien2018"><img src="./images/github-logo.png" alt="github"></a>
-        <a href="https://www.linkedin.com/in/daniel-lien-7a7b6262/"><img src="./images/linkedin-logo.png" alt="linkedin"></a>
-        <a href="https://www.appacademy.io/">About Me</a>
+        <a href="https://github.com/Daniellien2018" target="_blank" rel="noopener noreferrer"><img src="./images/github-logo.png" alt="github"></a>
+        <a href="https://www.linkedin.com/in/daniel-lien-7a7b6262/" target="_blank" rel="noopener noreferrer"><img src="./images/linkedin-logo.png" alt="linkedin"></a>
+        <!-- <a href="https://www.appacademy.io/">About Me</a> -->
       </div>
     </div>
 
@@ -40,10 +40,9 @@
 
     <div id="instructions_modal">
       <div class="instructions">
-          <div><p>
-            This map contains data for the Crude Mortality Rate caused by Diabetes Mellitus over the past two decades. 
-            <br>Click anywhere to continue 
-          </p></div>
+          <div id="modal-text-container">
+            <p id="modal-text">This map contains data for the Crude Mortality Rate caused by Diabetes Mellitus over the past two decades. <br>Click anywhere to continue </p>
+          </div>
       </div>
     </div>
 
@@ -55,7 +54,7 @@
         </div>
         <div class="slideContainer">
           <input type="range" min="1999" max="2020" value="2020" class="slider" id="myRange">
-          <p>Year: <span id='value'></span></p>
+          <p id="year-tag">Year: <span id='value'></span></p>
         </div>
         <div id="tooltip"> </div>
       </div>
@@ -89,8 +88,8 @@
           </div> 
         </div>
         <div class="images">
-          <a href="https://www.cdc.gov/diabetes/index.html" ><img src="images\diabetes-ribbon-2.jpg" id="ribbon" alt="ribbon"></a>
-          <a href="https://www.niddk.nih.gov/health-information/community-health-outreach/national-diabetes-month" ><img src="images\diabetes-butterfly-2.jpg" id="butterfly" alt="ribbon"></a>
+          <a href="https://www.cdc.gov/diabetes/index.html" target="_blank" rel="noopener noreferrer" ><img src="images\diabetes-ribbon-2.jpg" id="ribbon" alt="ribbon"></a>
+          <a href="https://www.niddk.nih.gov/health-information/community-health-outreach/national-diabetes-month" target="_blank" rel="noopener noreferrer"><img src="images\diabetes-butterfly-2.jpg" id="butterfly" alt="ribbon"></a>
         </div>
       </div>
     </div>  

@@ -4,6 +4,8 @@ body {
     flex-direction: column;
     align-items: left;
     position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 //Nav Bar
@@ -29,9 +31,9 @@ img{
   width: 25px;
   height: 25px;
 }
-img:hover{
-  scale: 1.8;
-}
+// img:hover{
+//   scale: 1.5;
+// }
 .topnav a:hover {
     background-color: #ddd;
     color: black;
@@ -79,7 +81,7 @@ h2{
 }
 
 path:hover{
-    fill: red;
+    fill: gold;
     cursor: pointer;
 }
 
@@ -156,6 +158,11 @@ p{
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-left: 7.5vw;
+}
+.slider{
+  background-color: red
 }
 
 .slider::after {
@@ -164,7 +171,8 @@ p{
   font-size: 30px;
   position: relative;
   right: 80%;
-  top: 26px;
+  margin-right: -4vw;
+  // margin-left: 4vw;
 }
 
 .slider::before{
@@ -173,7 +181,14 @@ p{
   font-size: 30px;
   position: relative;
   left: 80%;
-  top: 26px;
+  margin-left: -4vw;
+}
+#year-tag{
+  margin-left: 5vw;
+  width: 15vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
 }
 
 .slider {
@@ -248,10 +263,20 @@ p{
   z-index: 1;
   opacity: 1;
   background-color: rgba(0,0,0,0.5);
-  height: 150vh;
+  height: 100vh;
   width: 100vw;
   transition: 700ms;
 }
+#modal-text-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modal-text{
+  display: flex;
+  text-align: center;
+}
+
 
 .instructions{
   width: 100vw;
