@@ -1,5 +1,3 @@
-import { path } from 'd3';
-import { async } from 'regenerator-runtime';
 import {map} from "./Components/Map"
 import setupTabs from "./Components/Sidebars"
 
@@ -7,6 +5,7 @@ import setupTabs from "./Components/Sidebars"
 document.addEventListener("DOMContentLoaded", (event) => {
     map(2020); 
 });
+
 //Modal upon load
 document.addEventListener("DOMContentLoaded", (event) => {
   let instructions = document.getElementById('instructions_modal')
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 })
 
-
+//interactive map
 document.addEventListener("click", (event) => {
   if (event.target.id === "myRange"){
     let year = document.getElementById("myRange");
